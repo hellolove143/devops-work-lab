@@ -34,4 +34,6 @@ $ service jenkins start   / systemctl jenkins start
 #now add docker group with jenkins group so that docker can easily access the commands , whatever acknowledge to jenkins
 $ sudo usermod -aG Docker Jenkins ---------------------------> what ever u want add group just add the group names as it given
 
+$ after this restart the jenkins mmust 
+
 
