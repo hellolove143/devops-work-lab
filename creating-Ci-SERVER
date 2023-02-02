@@ -1,0 +1,58 @@
+install Git
+
+install Jenkins
+
+java -verion (check java is installed or not)
+
+maven install
+
+Docker install
+
+--------------------------------------------------------------
+NOW START JENKINS / DOCKER 
+
+$ service jenkins start
+
+$ service docker start
+
+$ sudo usermod -aG docker jenkins
+
+$ service jenkins restart  <--------- restart jenkins server after "usermod"
+
+------------------------------------------------------------------------
+Terminal work end here " NOW SWITCH TO JENKINS SERVICER USING PORT:8080 "
+------------------------------------------------------------------------
+
+Create Pipeline <----
+
+Build job upto docker build		<---- pipeline script 
+
+then run the job (once successfully build)
+
+-------------------------------------------------------------------------------------------------------------------
+NOW SWITCH TO TERMINAL " AND INSTALL TRIVY "
+
+STEP1 --> $ rpm -ivh https://github.com/aquasecurity/trivy/releases/download/v0.36.1/trivy_0.36.1_Linux-64bit.rpm + 
+                                                                                                                  +  
+                                                                                                                  +    
+// Find the installation directory for Trivy: //                                                                  +                               
+                                                                                                                  +
+STEP2 --> $ rpm -ql trivy                                                                                         +
+                                                                                                                  +  
+STEP3 --> LOCATE ---> $ vi /root/.bash_pofile -->  --> export PATH=$PATH:/usr/local/bin             +
+                                                                                                                  +
+STEP4 --> source ~/.bash_profile  ( TO REFRESH THE PROFILE )                                                      +
+                                                                                                                  +
+STEP5 --> trivy --version
+
+-------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------
+
+NOW SWITCH TO JENKINS SERVER :
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ADD - pipeline script
+
+trivy image <image_name>
+
+
