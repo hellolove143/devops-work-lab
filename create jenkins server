@@ -3,10 +3,15 @@ to create jenkins server install main requirements....!
 # install git
 $ sudo yum install git
 $ git --version
+
 --------------------------------------------------------
-#install maven ( IF THIS IS JAVA PROJECT APPLICATION )
-$ sudo yum install maven -y
-$ mvn --version
+# now install jenkins 
+follow the official jenkins page and select the linux os and install the package
+---------------------------------------
+
+# start the jenkins server
+$ service jenkins status  / systemctl jenkins status
+$ service jenkins start   / systemctl jenkins start
 ---------------------------------------------------------
 #install also from default aws packages ()
 
@@ -20,20 +25,13 @@ $ service docker status
 $ service docker start
 
 ---------------------------------------
-
-# now install jenkins 
-follow the official jenkins page and select the linux os and install the package
-
----------------------------------------
-# start the jenkins server
-$ service jenkins status  / systemctl jenkins status
-$ service jenkins start   / systemctl jenkins start
-
+#install maven ( IF THIS IS JAVA PROJECT APPLICATION )
+$ sudo yum install maven -y
+$ mvn --version
 -----------------------------------------
 
 #now add docker group with jenkins group so that docker can easily access the commands , whatever acknowledge to jenkins
 $ sudo usermod -aG Docker Jenkins ---------------------------> what ever u want add group just add the group names as it given
-
 $ after this restart the jenkins mmust 
 
 
